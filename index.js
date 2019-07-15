@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import routes from './src/routes/commentRoutes';
 const app = express();
-const PORT = 8080;
+const PORT = process.env.PORT;
 
 var cors = require('cors')
 app.use(cors())
