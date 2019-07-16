@@ -3,16 +3,15 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import routes from './src/routes/commentRoutes';
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 
 var cors = require('cors')
 app.use(cors())
 
 // mongoose connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/commentsdb', {
-    useMongoClient: true
-});
+mongoose.connect('mongodb+srv://slim:Kh%40dija2010@comments-r3ifj.mongodb.net/test', { useNewUrlParser: true });
+
 
 // bodyparser setup
 app.use(bodyParser.urlencoded({ extended: true }));
